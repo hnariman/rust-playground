@@ -22,14 +22,14 @@ pub fn while_loop(limit: i8) {
 pub fn just_loop(limit: i8) {
     println!("Using Loop of rust");
     let mut counter: i8 = 0;
-    let result = loop {
+    loop {
         counter += 1;
         println! {"{}", counter};
 
         if counter == limit {
             break;
         }
-    };
+    }
     println!("And we break");
 }
 
@@ -39,7 +39,7 @@ pub fn labeled_loop(limit: i8) {
         println!("cycles remaining: {}", count);
         count -= 1;
         if count == 0 {
-            break;
+            break 'decay_counter;
         }
     }
 }
